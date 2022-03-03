@@ -11,32 +11,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var myFriendsArray = ["Sara", "Nicole", "Grant"]
     var myCountryArray = ["Switzerland", "St. Lucia", "Guam", "Hong Kong", "New York City"]
+    var friendsHomeArray = ["Ewa Beach", "Mililani"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return myFriendsArray.count
         return myCountryArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")
         let text = myFriendsArray[indexPath.row]
         cell?.textLabel?.text = text
+        cell?.detailTextLabel?.text = friendsHomeArray[indexPath.row]
         return cell!
         
     }
     
     
     
-    }
     
-    
-    
-    
-    
-    
-    
-    override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -44,3 +39,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 
 
+}
